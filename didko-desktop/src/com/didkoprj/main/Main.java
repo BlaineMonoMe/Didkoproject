@@ -9,8 +9,8 @@ public class Main {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "didko";
 		cfg.useGL20 = false;
-		cfg.width = Gdx.graphics.getWidth();
-		cfg.height = Gdx.graphics.getHeight();
+		cfg.width = 1024;
+		cfg.height = 800;
 		
 		new LwjglApplication(new DidkoGame(), cfg);
 	}
