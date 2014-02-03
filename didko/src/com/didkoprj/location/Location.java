@@ -1,12 +1,22 @@
 package com.didkoprj.location;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.didkoprj.globalMap.Cell;
 
 public class Location implements Screen {
-	private Texture fon = null;
+	private Texture fon = null; 
+	private SpriteBatch batch;
 	
-	public Location(String fonFileName) {
+	private Cell cell = null;
+	
+	public Location(Cell cell, String fonFileName, SpriteBatch batch) {
+		
+		this.cell = cell; // like a pointer
+		this.batch = batch;
+		
 		if(fonFileName != null) {
 			this.fon = new Texture(fonFileName);
 		}
@@ -19,7 +29,9 @@ public class Location implements Screen {
 
 	@Override
 	public void render(float delta) {
-		// TODO Auto-generated method stub
+		batch.begin();
+		batch.draw(fon, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		batch.end();
 		
 	}
 
