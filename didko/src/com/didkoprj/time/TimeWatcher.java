@@ -25,7 +25,7 @@ public class TimeWatcher {
 	 * Day or night?
 	 */
 	private static boolean isDay = false;
-	private static Season season = Season.WINTER;
+	private static Season season = Season.SPRING;
 	
 	private TimeWatcher() {
 	}

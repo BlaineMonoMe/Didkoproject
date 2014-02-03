@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.didkoprj.time.TimeWatcher;
 
 public class DidkoGame extends Game {
 
@@ -24,7 +25,7 @@ public class DidkoGame extends Game {
 	
 	@Override
 	public void create() {		
-
+		TimeWatcher.printTime();
 	}
 
 	@Override
