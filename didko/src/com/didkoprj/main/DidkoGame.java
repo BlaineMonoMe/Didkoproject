@@ -13,6 +13,14 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class DidkoGame extends Game {
 
+	private DidkoGame(){}
+	
+	private static DidkoGame instance = new DidkoGame();
+	
+	public static DidkoGame getInstance() {
+		return instance;
+	}
+	
 	
 	@Override
 	public void create() {		
