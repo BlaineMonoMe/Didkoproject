@@ -16,9 +16,7 @@ public class DidkoGame extends Game {
 	
 	@Override
 	public void create() {		
-		String s;
-		String h;
-		String g;
+
 	}
 
 	@Override
