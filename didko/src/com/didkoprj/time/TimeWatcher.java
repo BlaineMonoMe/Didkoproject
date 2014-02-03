@@ -68,6 +68,7 @@ public class TimeWatcher {
 		
 		if(isDay) {
 			
+			isDay = false;
 			currentDay++;
 			
 			if(currentDay == DAYS_PER_MONTH) {
@@ -99,14 +100,14 @@ public class TimeWatcher {
 		}	
 	}
 	
-	public static void printTime() {
+	public static String getString() {
 		String day = null;
 		if(isDay) {
-			day = " day, ";
+			day = " day,   ";
 		}else {
 			day = " night, ";
 		}
-		System.out.println("Current time: " + day + currentDay + " day, "
+		return new String("Current time: " + day + currentDay + " day, "
 				+ currentMonth + " month, " + season + " season, "
 				+ currentYear + " year.");
 	}

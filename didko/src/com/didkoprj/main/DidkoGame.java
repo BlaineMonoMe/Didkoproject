@@ -24,8 +24,12 @@ public class DidkoGame extends Game {
 	
 	
 	@Override
-	public void create() {		
-		TimeWatcher.printTime();
+	public void create() {	
+		for(int i = 0; i < 160; i++) {
+			System.out.println(TimeWatcher.getString());
+			TimeWatcher.nextTurn();
+		}
+		
 	}
 
 	@Override
