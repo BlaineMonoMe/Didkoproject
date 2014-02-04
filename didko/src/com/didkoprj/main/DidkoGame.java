@@ -12,13 +12,18 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.didkoprj.globalMap.GlobalMapGenerator;
+import com.didkoprj.location.Location;
 import com.didkoprj.time.TimeWatcher;
 
 public class DidkoGame extends Game {
 	
+	SpriteBatch batch;// = new SpriteBatch();
+	
+	Screen loc;// = new Location(null, null, batch);
 
 
-	private DidkoGame(){}
+	private DidkoGame() { 
+	}
 	
 	private static DidkoGame instance = new DidkoGame();
 	
@@ -34,6 +39,9 @@ public class DidkoGame extends Game {
 			TimeWatcher.nextTurn();
 		}*/
 		//GlobalMapGenerator gmg = GlobalMapGenerator.getGlobalMapGenerator();
+		batch = new SpriteBatch();
+		loc = new Location(null, null, batch);
+		this.setScreen(loc);
 		
 	}
 
@@ -44,7 +52,7 @@ public class DidkoGame extends Game {
 
 	@Override
 	public void render() {		
-		
+		this.getScreen().render(1);
 	}
 
 	@Override
