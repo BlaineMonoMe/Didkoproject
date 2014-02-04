@@ -5,6 +5,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.didkoprj.globalMap.Cell;
+import com.didkoprj.time.Season;
+import com.didkoprj.time.TimeWatcher;
 
 public class Location implements Screen {
 	private Texture fon = null; 
@@ -19,6 +21,20 @@ public class Location implements Screen {
 		
 		if(fonFileName != null) {
 			this.fon = new Texture(fonFileName);
+		} 
+		else {
+			if(TimeWatcher.getSeason() == Season.SPRING) {
+				this.fon = new Texture("resources/images/Summer.PNG");
+			}
+			if(TimeWatcher.getSeason() == Season.SUMMER) {
+				this.fon = new Texture("resources/images/Summer.PNG");
+			}
+			if(TimeWatcher.getSeason() == Season.AUTUMN) {
+				this.fon = new Texture("resources/images/Autumn.PNG");
+			}
+			if(TimeWatcher.getSeason() == Season.WINTER) {
+				this.fon = new Texture("resources/images/Winter.PNG");
+			}
 		}
 		
 	}
