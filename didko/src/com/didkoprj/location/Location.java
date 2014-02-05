@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.didkoprj.globalMap.Cell;
+import com.didkoprj.globalMap.cell.Cell;
 import com.didkoprj.time.Season;
 import com.didkoprj.time.TimeWatcher;
 
