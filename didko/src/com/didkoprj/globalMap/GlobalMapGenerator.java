@@ -1,5 +1,7 @@
 package com.didkoprj.globalMap;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 /**
  * 		This class generate/load/create a GlobalMap
  */
@@ -21,8 +23,8 @@ public class GlobalMapGenerator {
 
 	}
 	
-	public GlobalMap loadGlobalMap(String fileName) {
-		return new GlobalMap();
+	public GlobalMap loadGlobalMap(int width, int height, SpriteBatch batch) {
+		return new GlobalMap(width, height, batch);
 	}
 	
 	
