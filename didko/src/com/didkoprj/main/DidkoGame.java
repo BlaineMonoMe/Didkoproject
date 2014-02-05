@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.didkoprj.globalMap.GlobalMap;
 import com.didkoprj.globalMap.GlobalMapGenerator;
 import com.didkoprj.location.Location;
 import com.didkoprj.time.TimeWatcher;
@@ -20,6 +21,9 @@ public class DidkoGame extends Game {
 	SpriteBatch batch;// = new SpriteBatch();
 	
 	Screen loc;// = new Location(null, null, batch);
+	
+	GlobalMapGenerator gmg = null;
+	GlobalMap globalMap = null;
 
 
 	private DidkoGame() { 
@@ -34,14 +38,19 @@ public class DidkoGame extends Game {
 	
 	@Override
 	public void create() {	
+		
+		batch = new SpriteBatch();
+		
+		gmg = GlobalMapGenerator.getGlobalMapGenerator();
+		globalMap = gmg.loadGlobalMap(30, 20, batch);
 		/*for(int i = 0; i < 160; i++) {
 			System.out.println(TimeWatcher.getString());
 			TimeWatcher.nextTurn();
 		}*/
 		//GlobalMapGenerator gmg = GlobalMapGenerator.getGlobalMapGenerator();
-		batch = new SpriteBatch();
+		
 		loc = new Location(null, null, batch);
-		this.setScreen(loc);
+		this.setScreen(globalMap);
 		
 	}
 
