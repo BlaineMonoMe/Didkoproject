@@ -7,6 +7,7 @@ import com.didkoprj.time.Season;
 
 public class Cell {
 	
+	private Texture pic = null;
 	private CellType type = null;
 	
 	public Cell(CellType type) {
@@ -35,11 +36,13 @@ public class Cell {
 			case WINTER: seasonName = new String("Winter.PNG"); break;	
 		}
 		
-		Texture pic = new Texture("resources/images/global_map/" + typeName + seasonName);
+		pic = new Texture("resources/images/global_map/" + typeName + seasonName);
 		
 		batch.begin();
 		batch.draw(pic, x, y, width, height);
 		batch.end();
+		
+		pic.dispose();
 		
 	}
 	
