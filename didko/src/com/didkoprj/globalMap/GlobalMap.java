@@ -16,6 +16,8 @@ public class GlobalMap implements Screen{
 	private int width;
 	private int height;
 	
+	int ii = 0;
+	
 	private final int CELLS_PER_WIDTH = 5;
 	private final int CELLS_PER_HEIGHT = 4;
 	private int CELL_WIDTH = Gdx.graphics.getWidth() / CELLS_PER_WIDTH;
@@ -36,7 +38,7 @@ public class GlobalMap implements Screen{
 		Random random = new Random();
 		for(int i=0;i<h;i++) {
 			for(int j=0;j<w;j++) {
-				int rand = random.nextInt(2);
+				int rand = random.nextInt(3);
 				switch(rand) {
 					case 0: cell[i][j] = new Cell(CellType.FIELD); break;
 					case 1: cell[i][j] = new Cell(CellType.FOREST); break;
@@ -46,10 +48,21 @@ public class GlobalMap implements Screen{
 			}
 		}
 	}
+	
+	public void draw(int cellX, int cellY, int offsetX, int offsetY) {
+		for(int i=0;i<CELLS_PER_WIDTH+1;i++) {
+			for(int j=0;j<CELLS_PER_HEIGHT+1;j++) {
+				cell[cellX+i][cellY+j].draw((cellX + i) * CELL_WIDTH + offsetX,
+						(cellY + j) * CELL_HEIGHT + offsetY, CELL_WIDTH, CELL_HEIGHT, batch);
+			}
+		}
+		
+	}
 
 	@Override
 	public void render(float delta) {
-		cell[0][0].draw(0, 0, CELL_WIDTH, CELL_HEIGHT, batch);
+		this.draw(0, 0, 30+ii, 20+ii);
+		ii++;
 		
 	}
 
