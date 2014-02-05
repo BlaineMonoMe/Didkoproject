@@ -24,16 +24,16 @@ public class Location implements Screen {
 		} 
 		else {
 			if(TimeWatcher.getSeason() == Season.SPRING) {
-				this.fon = new Texture("resources/images/location_fons/Summer.PNG");
+				this.fon = new Texture("resources/images/location/fons/fields/Summer.PNG");
 			}
 			if(TimeWatcher.getSeason() == Season.SUMMER) {
-				this.fon = new Texture("resources/images/location_fons/Summer.PNG");
+				this.fon = new Texture("resources/images/location/fons/fields/Summer.PNG");
 			}
 			if(TimeWatcher.getSeason() == Season.AUTUMN) {
-				this.fon = new Texture("resources/images/location_fons/Autumn.PNG");
+				this.fon = new Texture("resources/images/location/fons/fields/Autumn.PNG");
 			}
 			if(TimeWatcher.getSeason() == Season.WINTER) {
-				this.fon = new Texture("resources/images/location_fons/Winter.PNG");
+				this.fon = new Texture("resources/images/location/fons/fields/Winter.PNG");
 				//hehe
 			} 
 		}
