@@ -61,7 +61,10 @@ public class DidkoGame extends Game {
 
 	@Override
 	public void render() {		
-		this.getScreen().render(1);
+		this.getScreen().render((float)0.2);
+		TimeWatcher.nextTurn();
+		TimeWatcher.nextTurn();
+		System.out.println(TimeWatcher.getSeason());
 	}
 
 	@Override
